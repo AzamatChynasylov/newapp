@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
-   <h1>Test</h1>
+   <div class="row">
+      <div class="col">
+      <a href="{{route('admin.group.index')}}" class="btn btn-primary">Группы</a>
+      </div>
+   </div>
 </div>
 @endsection
