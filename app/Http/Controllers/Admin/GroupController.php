@@ -15,7 +15,12 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+			return view('admin.groups.index', [
+			'group' => [],
+			'groups' => Group::with('children')->where('parent_id','0')->get(),
+			'delimiter' => ''
+			]
+		);
     }
 
     /**
@@ -25,7 +30,11 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.groups.create',[
+					'group' => [],
+					'groups' => Group::with('children')->where('parent_id','0')->get(),
+					'delimiter' => ''
+				]);
     }
 
     /**
@@ -36,7 +45,13 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+			
+				$data= request()->validate([
+					'title' => 'required'
+				]);
+				
+				Group::create($data);
+				return redirect()->route('admin.group.index');
     }
 
     /**
