@@ -13,8 +13,9 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->session()->flash('success', 'Группа успешно создан');
 			return view('admin.groups.index', [
 			'group' => [],
 			'groups' => Group::with('children')->where('parent_id','0')->get(),

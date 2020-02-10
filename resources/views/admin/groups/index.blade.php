@@ -9,6 +9,7 @@
 				@slot('active') Группы @endslot
 			@endcomponent
 			<label for="">Группы</label>
+		
 			<select class="form-control" name="parent_id">
 				<option value="0">-- Выберете Группу из списка --</option>
 				@include('admin.groups.partials.categories', ['categories' => $groups])
