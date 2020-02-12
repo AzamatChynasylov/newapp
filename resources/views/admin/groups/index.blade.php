@@ -8,14 +8,15 @@
 				@slot('parent') Главная @endslot
 				@slot('active') Группы @endslot
 			@endcomponent
-			<label for="">Родительская Группа</label>
+			<label for="">Группы</label>
+		
 			<select class="form-control" name="parent_id">
-				<option value="0">-- без родительской Группы --</option>
+				<option value="0">-- Выберете Группу из списка --</option>
 				@include('admin.groups.partials.categories', ['categories' => $groups])
 			</select>
 			<div class="row">
 				<div class="col">
-				<a  class="btn btn-primary" href="{{ route('admin.group.create') }}"> Создать Группу </a>
+				<a  class="btn btn-primary mt-5" href="{{ route('admin.group.create') }}"> Создать Группу </a>
 				</div>
 			</div>
 		</div>
