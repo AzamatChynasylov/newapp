@@ -45,12 +45,12 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-			
+			dd($request);
 				$data= request()->validate([
 					'title' => 'required'
 				]);
 				
-				Group::create($data);
+				Group::create($request->all());
 				return redirect()->route('admin.group.index');
     }
 
