@@ -20,6 +20,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
 	Route::get('/','DashboardController@index')->name('admin.index');
 	Route::resource('/group', 'GroupController',['as'=>'admin']);
 	Route::resource('/questionnares', 'QuestionnareController');
+	Route::get('/questionnares/{questionare}/question/create','QuestionController@create')->name('questionnare.question.create');
+	Route::post('/questionnares/{questionare}/question','QuestionController@store')->name('questionnare.question.store');
 });
 
 

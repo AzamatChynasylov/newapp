@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <p>{{$questionnare->purpose}}</p>
 
-                        <a href="#" class="btn btn-primary mb-5">Create Questions</a>
+                        <a href="{{route('questionnare.question.create',[$questionnare])}}" class="btn btn-primary mb-5">Create Questions</a>
 
 {{--                        @forelse($questionnares as $questionnare)--}}
 {{--                            <div class="card" >--}}

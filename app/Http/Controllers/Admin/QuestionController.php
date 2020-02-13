@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Question;
+use App\Questionnare;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -23,9 +24,9 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Questionnare $questionnare)
     {
-        //
+        return view('admin.questions.create',compact('questionnare'));
     }
 
     /**
@@ -34,9 +35,14 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Questionnare $questionnare)
     {
         //
+        $data= request()->validate([
+           'question.question' => 'required',
+            'answer.*.answer' => 'required'
+        ]);
+        dd($request->all());
     }
 
     /**
