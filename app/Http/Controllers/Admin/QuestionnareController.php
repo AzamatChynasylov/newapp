@@ -16,6 +16,10 @@ class QuestionnareController extends Controller
     public function index()
     {
         //
+        $questionnares = Questionnare::all();
+        return  view('admin.questionnares.index',[
+            'questionnares' => $questionnares
+        ]);
     }
 
     /**
@@ -25,7 +29,7 @@ class QuestionnareController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.questionnares.create');
     }
 
     /**
@@ -36,7 +40,15 @@ class QuestionnareController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'title' => 'required',
+            'purpose' => 'required'
+        ]);
+
+        auth()->user()->questionnares()->create($data);
+
+        return redirect()->route('questionnares.index');
+
     }
 
     /**
@@ -48,6 +60,7 @@ class QuestionnareController extends Controller
     public function show(Questionnare $questionnare)
     {
         //
+        return view('admin.questionnares.show', compact('questionnare'));
     }
 
     /**
