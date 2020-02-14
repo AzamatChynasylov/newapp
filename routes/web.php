@@ -22,6 +22,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
 	Route::resource('/questionnares', 'QuestionnareController');
 	Route::get('/questionnares/{questionare}/question/create','QuestionController@create')->name('questionnare.question.create');
 	Route::post('/questionnares/{questionare}/question','QuestionController@store')->name('questionnare.question.store');
+    Route::get('/surveys/{questionnare}-{slug}', 'SurveyController@show')->name('survey');
+    Route::post('/surveys/{questionnare}-{slug}', 'SurveyController@store')->name('survey');
 });
 
 

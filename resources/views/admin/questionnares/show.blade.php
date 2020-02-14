@@ -10,10 +10,11 @@
                     <div class="card-body">
                         <p>{{$questionnare->purpose}}</p>
 
-                        <a href="{{route('questionnare.question.create',[$questionnare])}}" class="btn btn-primary mb-5">Create Questions</a>
+                        <a href="{{route('questionnare.question.create',[$questionnare])}}" class="btn btn-primary ">Create Questions</a>
+                        <a href="{{route('survey',[$questionnare,Str::slug($questionnare->title)])}}" class="btn btn-primary">Take Survey</a>
 
                         @forelse($questionnare->questions as $question)
-                            <div class="card mb-5" >
+                            <div class="card mt-5" >
 
                                 <div class="card-body">
                                     <h5 class="card-title">{{$question->question}}</h5>

@@ -12,11 +12,14 @@
 
                         @forelse($questionnares as $questionnare)
                             <div class="card" >
+                                <div class="card-header">
+                                    <h5 class="card-title">{{$questionnare->title}}</h5>
+                                </div>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">{{$questionnare->title}}</h5>
+
                                     <p class="card-text">{{$questionnare->purpose}}</p>
-                                    <a href="{{route('questionnares.show', $questionnare)}}" class="btn btn-primary">Go to Questions</a>
+                                    <a href="{{route('questionnares.show', $questionnare)}}" class="btn btn-primary">Go to Questionnnare</a>
                                 </div>
                             </div>
                         @empty
