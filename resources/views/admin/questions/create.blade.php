@@ -8,6 +8,7 @@
                     <div class="card-header">Create Question</div>
 
                     <div class="card-body">
+
                         <form action="{{route('questionnare.question.store',[$questionnare])}}" method="post">
                             @csrf
                             @include('admin.questions.partials.form')

@@ -59,7 +59,7 @@ class QuestionnareController extends Controller
      */
     public function show(Questionnare $questionnare)
     {
-        //
+        $questionnare->load('questions.answers');
         return view('admin.questionnares.show', compact('questionnare'));
     }
 

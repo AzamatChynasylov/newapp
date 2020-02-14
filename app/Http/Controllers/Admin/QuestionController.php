@@ -24,9 +24,12 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Questionnare $questionnare)
+    public function create($questionnare)
     {
-        return view('admin.questions.create',compact('questionnare'));
+       // dd($questionnare);
+        return view('admin.questions.create',[
+            'questionnare' => $questionnare
+        ]);
     }
 
     /**
@@ -35,14 +38,21 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Questionnare $questionnare)
+    public function store($questionnare)
     {
         //
+        $questionnare = Questionnare::find($questionnare);
+        //dd($questionnare);
         $data= request()->validate([
            'question.question' => 'required',
-            'answer.*.answer' => 'required'
+            'answers.*.answer' => 'required'
         ]);
-        dd($request->all());
+
+        $question = $questionnare->questions()->create($data['question']);
+
+        $question->answers()->createMany($data['answers']);
+
+        return  redirect()->route('questionnares.show',[$questionnare]);
     }
 
     /**

@@ -12,18 +12,17 @@
 
                         <a href="{{route('questionnare.question.create',[$questionnare])}}" class="btn btn-primary mb-5">Create Questions</a>
 
-{{--                        @forelse($questionnares as $questionnare)--}}
-{{--                            <div class="card" >--}}
+                        @forelse($questionnare->questions as $question)
+                            <div class="card mb-5" >
 
-{{--                                <div class="card-body">--}}
-{{--                                    <h5 class="card-title">{{$questionnare->title}}</h5>--}}
-{{--                                    <p class="card-text">{{$questionnare->purpose}}</p>--}}
-{{--                                    <a href="{{route('questionnares.show', $questionnare)}}" class="btn btn-primary">Go to Questions</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        @empty--}}
-{{--                            <p>No Quewsstionnares</p>--}}
-{{--                        @endforelse--}}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$question->question}}</h5>
+
+                                </div>
+                            </div>
+                        @empty
+                            <p>No Questions</p>
+                        @endforelse
 
                     </div>
                 </div>
