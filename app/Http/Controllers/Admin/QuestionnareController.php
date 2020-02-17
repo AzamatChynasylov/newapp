@@ -17,6 +17,7 @@ class QuestionnareController extends Controller
     {
         //
         $questionnares = Questionnare::all();
+        
         return  view('admin.questionnares.index',[
             'questionnares' => $questionnares
         ]);
@@ -59,7 +60,8 @@ class QuestionnareController extends Controller
      */
     public function show(Questionnare $questionnare)
     {
-        $questionnare->load('questions.answers');
+        $questionnare->load('questions.answers.responses');
+        
         return view('admin.questionnares.show', compact('questionnare'));
     }
 
