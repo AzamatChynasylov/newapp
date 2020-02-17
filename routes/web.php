@@ -30,3 +30,5 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/ajax', 'HomeController@returndata');
+Route::get('/home/getchartdata', 'HomeController@getchartdata');

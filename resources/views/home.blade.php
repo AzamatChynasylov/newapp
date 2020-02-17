@@ -12,6 +12,33 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-8 mt-4">
+            <div class="card">
+                <div class="card-header">Vue to Blade</div>
+                <div class="card-body">
+                    <prop-component :url="{{$url}}"></prop-component>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-8 mt-4">
+            <div class="card">
+                <div class="card-header">Ajax Vue</div>
+                <div class="card-body">
+                    <ajax-component></ajax-component>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-8 mt-4">
+            <div class="card">
+                <div class="card-header">Vue Chart 1</div>
+                <div class="card-body">
+                    <linechart-component></linechart-component>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
 @endsection
