@@ -16,7 +16,8 @@
     @endisset
 
     >
-    {!! $delimiter ?? "" !!}{{$category_list->title ?? ""}}
+		{!! $delimiter ?? "" !!}{{$category_list->title ?? ""}}<i class="fa fa-group"></i>
+		<a href="#"><i class="fa fa-group"></i></a>
   </option>
 
   @if (count($category_list->children) > 0)
