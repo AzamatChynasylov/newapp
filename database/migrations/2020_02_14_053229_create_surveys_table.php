@@ -18,6 +18,7 @@ class CreateSurveysTable extends Migration
             $table->unsignedBigInteger('questionnare_id');
             $table->string('name');
             $table->string('email');
+            
             $table->timestamps();
         });
     }

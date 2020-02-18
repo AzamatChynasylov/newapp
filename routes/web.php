@@ -38,3 +38,31 @@ Route::get('/home/getchartdata', 'HomeController@getchartdata');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
+
+
+
+Route::resource('shifts', 'ShiftController');
+
+Route::resource('batches', 'BatchController');
+
+Route::resource('levels', 'LevelController');
+
+Route::resource('classrooms', 'ClassroomController');
+
+Route::resource('classes', 'ClassController');
+
+Route::resource('times', 'TimeController');
+
+Route::resource('attendances', 'AttendanceController');
+
+Route::resource('academics', 'AcademicController');
+
+Route::resource('days', 'DayController');
+
+Route::resource('classAssignings', 'ClassAssigningController');
+
+Route::resource('classShedulings', 'ClassShedulingController');
+
+Route::resource('transactions', 'TransactionController');
+
+Route::resource('users', 'UserController');
