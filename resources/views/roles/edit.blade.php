@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Batch
+            Role
         </h1>
    </section>
    <div class="content">
@@ -11,13 +11,17 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($batch, ['route' => ['batches.update', $batch->batch_id], 'method' => 'patch']) !!}
+                   {!! Form::model($role, ['route' => ['roles.update', $role->role_id], 'method' => 'patch']) !!}
 
-									 <div class="form-group ">
-										{!! Form::label('batch', 'Batch:') !!}
-										{!! Form::number('batch', null, ['class' => 'form-control']) !!}
+									 <div class="form-group">
+										{!! Form::label('name', 'Name:') !!}
+										{!! Form::text('name', null, ['class' => 'form-control']) !!}
 								</div>
-								{!! Form::submit('Update Batch', ['class' => 'btn btn-success']) !!}
+								
+							
+														<div class="">
+																{!! Form::submit('Update Role', ['class' => 'btn btn-success']) !!}
+														</div>
 
                    {!! Form::close() !!}
                </div>

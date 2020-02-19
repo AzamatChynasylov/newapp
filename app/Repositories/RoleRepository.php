@@ -2,24 +2,24 @@
 
 namespace App\Repositories;
 
-use App\Models\Batch;
+use App\Models\Role;
 use App\Repositories\BaseRepository;
 
 /**
- * Class BatchRepository
+ * Class RoleRepository
  * @package App\Repositories
- * @version February 18, 2020, 4:03 pm UTC
+ * @version February 19, 2020, 2:51 am UTC
 */
 
-class BatchRepository extends BaseRepository
+class RoleRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'batch'
+        'name'
     ];
-		protected $primaryKey = 'batch_id';
+		protected $primaryKey = 'role_id';
     /**
      * Return searchable fields
      *
@@ -35,6 +35,6 @@ class BatchRepository extends BaseRepository
      **/
     public function model()
     {
-        return Batch::class;
+        return Role::class;
     }
 }

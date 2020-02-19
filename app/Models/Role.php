@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model as Model;
 
 /**
- * Class Batch
+ * Class Role
  * @package App\Models
- * @version February 18, 2020, 4:03 pm UTC
+ * @version February 19, 2020, 2:51 am UTC
  *
- * @property integer batch
+ * @property string name
  */
-class Batch extends Model
+class Role extends Model
 {
 
-    public $table = 'batches';
-    
+    public $table = 'roles';
+
+    protected $primaryKey = 'role_id';
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -23,17 +25,17 @@ class Batch extends Model
 
 
     public $fillable = [
-        'batch'
+        'name'
     ];
-		protected $primaryKey = 'batch_id';
+
     /**
      * The attributes that should be casted to native types.
      *
      * @var array
      */
     protected $casts = [
-        'batch_id' => 'integer',
-        'batch' => 'integer'
+        'role_id' => 'integer',
+        'name' => 'string'
     ];
 
     /**
@@ -42,8 +44,8 @@ class Batch extends Model
      * @var array
      */
     public static $rules = [
-        'batch' => 'required'
+        'name' => 'required'
     ];
 
-    
+
 }

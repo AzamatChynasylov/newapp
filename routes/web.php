@@ -66,3 +66,7 @@ Route::resource('classShedulings', 'ClassShedulingController');
 Route::resource('transactions', 'TransactionController');
 
 Route::resource('users', 'UserController');
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('courses', 'CourseController');
